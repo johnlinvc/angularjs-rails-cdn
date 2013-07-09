@@ -6,7 +6,7 @@ module Angularjs
 		module Cdn
 			module ActionViewExtensions
 				ANGULARJS_VERSION = AngularJS::Rails::VERSION
-				OFFLINE = (Rails.env.development? or Rails.env.test?)
+				OFFLINE = (::Rails.env.development? or ::Rails.env.test?)
 				URL = {
 					:google             => "//ajax.googleapis.com/ajax/libs/angularjs/#{ANGULARJS_VERSION}/angular.min.js",
 				}
@@ -25,7 +25,7 @@ module Angularjs
 
 			end
 			# Your code goes here...
-			class Railtie < Rails::Railtie
+			class Railtie < ::Rails::Railtie
 				initializer 'angularjs_rails_cdn.action_view' do |app|
 					ActiveSupport.on_load(:action_view) do
 						include Angularjs::Rails::Cdn::ActionViewExtensions
