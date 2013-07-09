@@ -19,7 +19,7 @@ module Angularjs
 					return javascript_include_tag(:angular, options) if OFFLINE and !options.delete(:force)
 
 					[ javascript_include_tag(angularjs_url(name), options),
-						javascript_tag("window.angular || document.write(unescape('#{javascript_include_tag(:angular, options).gsub('<','%3C')}'))")
+						javascript_tag("window.angular || document.write(unescape('#{javascript_include_tag(:angular, options).gsub('<','%3C')}'))", options)
 					].join("\n").html_safe
 				end
 
