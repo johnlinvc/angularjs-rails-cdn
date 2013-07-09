@@ -11,7 +11,7 @@ module Angularjs
 					:google             => "//ajax.googleapis.com/ajax/libs/angularjs/#{ANGULARJS_VERSION}/angular.min.js",
 				}
 
-				def angularjs_rul(name)
+				def angularjs_url(name)
 					URL[name]
 				end
 
